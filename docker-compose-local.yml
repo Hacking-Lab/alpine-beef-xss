@@ -11,7 +11,3 @@ services:
       - "BEEF_FQDN=localhost"
     ports:
       - "3000:3000"
-    env_file:
-      - ./UUID.env
-    volumes:
-      - ./UUID.gn:/goldnugget/UUID.gn

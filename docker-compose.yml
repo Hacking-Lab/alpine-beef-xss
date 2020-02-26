@@ -9,13 +9,10 @@ services:
       - "BEEF_USERNAME=hacker"
       - "BEEF_PASSWORD=compass"
       - "BEEF_FQDN=hobo.idocker.REALM_DOMAIN_SUFFIX"
+      - "BEEF_HTTPS=yes"
     labels:
       - "traefik.port=3000"
       - "traefik.frontend.rule=Host:hobo.REALM_DOMAIN_SUFFIX"
-      - "traefik.protocol=http"
-    env_file:
-      - ./UUID.env
-    volumes:
-      - ./UUID.gn:/goldnugget/UUID.gn
+      - "traefik.protocol=https"
 
       

@@ -55,7 +55,7 @@ beef:
         #   by altering the X-FORWARDED-FOR ip address in the request header.
         allow_reverse_proxy: true
         public: "SED_FQDN"      # public hostname/IP address
-        public_port: "443" # public port (experimental)
+        # public_port: "" # public port (experimental)
 
         # Hook
         hook_file: "/hook.js"
@@ -86,7 +86,7 @@ beef:
             hook_root: false # inject BeEF hook in the server home page
         # Experimental HTTPS support for the hook / admin / all other Thin managed web services
         https:
-            enable: false
+            enable: false # HTTPS_ENABLE
             # In production environments, be sure to use a valid certificate signed for the value
             # used in beef.http.public (the domain name of the server where you run BeEF)
             key: "beef_key.pem"
