@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv bash
+sed -e "s/SED_FQDN/$BEEF_FQDN/g" -i /app/config.yaml
+sed -e "s/SED_USER/$BEEF_USERNAME/g" -i /app/config.yaml
+sed -e "s/SED_PASSWD/$BEEF_PASSWORD/g" -i /app/config.yaml

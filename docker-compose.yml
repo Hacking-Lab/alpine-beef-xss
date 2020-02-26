@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  alpine-beef-xss-hobo:
+    image: REGISTRY_BASE_URL/alpine-beef-xss:latest
+    hostname: 'hobo'
+    environment:
+      - "domainname=idocker.REALM_DOMAIN_SUFFIX"
+      - "BEEF_USERNAME=hacker"
+      - "BEEF_PASSWORD=compass"
+      - "BEEF_FQDN=hobo.idocker.REALM_DOMAIN_SUFFIX"
+    labels:
+      - "traefik.port=3000"
+      - "traefik.frontend.rule=Host:hobo.REALM_DOMAIN_SUFFIX"
+      - "traefik.protocol=http"
+    env_file:
+      - ./UUID.env
+    volumes:
+      - ./UUID.gn:/goldnugget/UUID.gn
+
+      
