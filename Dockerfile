@@ -1,4 +1,4 @@
-FROM hackinglab/alpine-base
+FROM hackinglab/alpine-base:3.2
 MAINTAINER Stephan Hauser <stephan.hauser@compass-security.com>
 
 RUN apk add -U \
