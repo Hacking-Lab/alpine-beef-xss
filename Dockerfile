@@ -1,4 +1,4 @@
-FROM hackinglab/alpine-base:3.2
+FROM hackinglab/alpine-base
 MAINTAINER Stephan Hauser <stephan.hauser@compass-security.com>
 
 RUN apk add -U \
@@ -21,7 +21,7 @@ RUN apk add -U \
 RUN git clone git://github.com/beefproject/beef.git /app && \
     cd /app && bundle install
 
-RUN apk del git build-base sqlite-dev zlib-dev curl-dev ruby-dev && rm -rf /var/cache/apk/*
+RUN apk del build-base sqlite-dev zlib-dev curl-dev ruby-dev && rm -rf /var/cache/apk/*
 
 ENV LANG "en_US.UTF-8"
 RUN mkdir /opt/GeoIP && yes | /app/update-geoipdb
