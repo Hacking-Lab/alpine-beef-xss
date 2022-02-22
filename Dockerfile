@@ -24,7 +24,8 @@ RUN git clone git://github.com/beefproject/beef.git /app && \
 RUN apk del build-base sqlite-dev zlib-dev curl-dev ruby-dev && rm -rf /var/cache/apk/*
 
 ENV LANG "en_US.UTF-8"
-RUN mkdir /opt/GeoIP && yes | /app/update-geoipdb
+#RUN mkdir /opt/GeoIP && yes | /app/update-geoipdb
+RUN mkdir /opt/GeoIP 
 
 COPY /root /
 
