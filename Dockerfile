@@ -18,7 +18,7 @@ RUN apk add -U \
   nodejs \
   ruby-bundler
 
-RUN git clone git://github.com/beefproject/beef.git /app && \
+RUN git clone https://github.com/beefproject/beef.git /app && \
     cd /app && bundle install
 
 RUN apk del build-base sqlite-dev zlib-dev curl-dev ruby-dev && rm -rf /var/cache/apk/*
